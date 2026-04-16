@@ -8,12 +8,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use(express.static(path.join(__dirname, '../FRONTEND')));
-
-
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../FRONTEND/inicio.html'));
-});
 
 
 /* 🔐 LOGIN */
@@ -35,6 +29,8 @@ app.post('/login', (req, res) => {
         }
     );
 });
+
+
 
 /* =========================
    CRUD (4 METODOS)
@@ -76,4 +72,14 @@ app.delete('/productos/:id', (req, res) => {
         () => res.json({ mensaje: "Eliminado" })
     );
 });
+
+app.use(express.static(path.join(__dirname, '../FRONTEND')));
+
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../FRONTEND/inicio.html'));
+});
+
+
+
 app.listen(3000, () => console.log("Servidor listo"));
