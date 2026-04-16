@@ -1,4 +1,4 @@
-const mysql = require('mysql2');
+const mysql = require('mysql2'); // 🔥 ESTA LÍNEA TE FALTABA
 
 const db = mysql.createConnection({
     host: process.env.MYSQLHOST,
