@@ -17,29 +17,37 @@
     <button onclick="login()">Entrar</button>
 </div>
 
-
 <script>
 function login(){
 
+    const usuario = document.getElementById("user").value;
+    const password = document.getElementById("pass").value;
+
     fetch("https://farmacia-fercho.onrender.com/login", {
         method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({
-            usuario: document.getElementById("user").value,
-            password: document.getElementById("pass").value
-        })
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ usuario, password })
     })
     .then(res => res.json())
     .then(data => {
+
+        console.log(data); // 🔥 para ver qué llega
 
         if(data.error){
             alert("Datos incorrectos");
         } else {
             localStorage.setItem("rol", data.rol);
             localStorage.setItem("usuario", data.usuario);
-            window.location = "dashboard.html";
+
+            window.location.href = "dashboard.html";
         }
 
+    })
+    .catch(err => {
+        console.error("ERROR:", err);
+        alert("Error al conectar con el servidor");
     });
 }
 </script>
