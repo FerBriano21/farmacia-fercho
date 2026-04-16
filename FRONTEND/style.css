@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    font-family: Arial;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background: #111;
+    padding: 15px;
+    color: white;
+}
+
+.navbar a {
+    color: white;
+    margin: 10px;
+    text-decoration: none;
+}
+
+/* TABLA COLORES */
+.normal {
+    background: #e8f5e9;
+}
+
+.bajo {
+    background: #ffebee;
+}
+
+/* HOVER */
+tr:hover {
+    background: #bbdefb;
+}
+
+/* BOTONES */
+button {
+    border: none;
+    padding: 8px;
+    border-radius: 8px;
+    background: #00bcd4;
+    color: white;
+}
+
+button:hover {
+    background: #0097a7;
+}
+
+/* TITULOS */
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* BIENVENIDA */
+#bienvenida {
+    text-align: center;
+    color: #0072ff;
+}
+
+/* HERO */
+.inicio {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: white;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 80vh;
+}
+
+.hero img {
+    width: 300px;
+}
+
+/* LOGIN */
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+}
+
+.login-box {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+/* TABLA */
+.card {
+    background: white;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+/* MAPA */
+#map {
+    height: 400px;
+}

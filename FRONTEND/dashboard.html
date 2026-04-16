@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Inventario</title>
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <h2 class="logo">💊 Fercho</h2>
+
+    <nav>
+        <a href="carrito.html">
+    <button>🛒 Ver carrito</button>
+</a>
+        <button onclick="logout()">Salir</button>
+    </nav>
+</header>
+
+<h1 class="fade-in">Inventario de productos</h1>
+
+<!-- FORM -->
+
+<div class="card">
+    <input id="nombre" placeholder="Nombre">
+    <input id="precio" placeholder="Precio">
+    <input id="stock" placeholder="Stock">
+    <button onclick="agregar()">Agregar</button>
+    
+<script src="app.js"></script>
+</div>
+
+<!-- TABLA -->
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody id="tabla"></tbody>
+</table>
+
+<h2>Farmacias cercanas</h2>
+<div id="map"></div>
+
+<script src="app.js"></script>
+<script>
+const rol = localStorage.getItem("rol");
+
+if(rol !== "admin" && rol !== "cliente"){
+    window.location = "login.html";
+}
+</script>
+
+</body>
+</html>
